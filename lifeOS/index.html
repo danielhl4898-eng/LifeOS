@@ -2,12 +2,28 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="/src/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>lifeos</title>
+    <title>pi</title>
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
+    <div class="seccionTareas">
+      <h1 class="titulo">Tareas</h1>
+      <div class="cajaTarea">
+        <div class="titulo-cajacreartarea">Nueva tarea</div>
+          <input type="text" class="nombreTareaNueva" placeholder="Nombre de la tarea" id="nombreTarea">
+          <div class="filaInferior">
+              <select class="elegirPrioridad" id="prioridadNueva">
+                <option value="" disabled selected>Prioridad</option>
+                <option value="Alta">Alta</option>
+                <option value="Media">Media</option>
+                <option value="Baja">Baja</option>
+              </select>
+              <button class="boton-guardar" id="btnGuardar">Guardar tarea</button>
+        </div>
+      </div>
+      <div id="listaTareas"></div>
+    </div>
   </body>
+  <script type="module" src="/src/main.js"></script>
 </html>
