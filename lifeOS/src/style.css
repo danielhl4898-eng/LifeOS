@@ -68,3 +68,44 @@ body{
   background-color: #F4F4F4;
   display: flex;
 }
+
+.prioAlta {
+  background-color: #ffe6e6;
+  color: #c92a2a;
+  border: 1px solid #ffa8a8;
+  border-radius: 5px;
+  font-size: 13px;
+  padding: 3px 8px;
+}
+
+.prioMedia {
+  background-color: #fff9db;
+  color: #b58105;
+  border: 1px solid #ffe066;
+  border-radius: 5px;
+  font-size: 13px;
+  padding: 3px 8px;
+}
+
+.prioBaja{
+  background-color: #e6fcf5;
+  color: #0ca678;
+  border: 1px solid #96f2d7;
+  border-radius: 5px;
+  font-size: 13px;
+  padding: 3px 8px;
+}
+.estadoPendiente {
+  background-color: #e9ecef;
+  color: #495057;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  padding: 3px 8px;
+  font-size: 13px;
+  font-weight: 500;
+}
+.descripcionGuardada {
+  color: #555555;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
