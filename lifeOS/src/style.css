@@ -14,14 +14,49 @@ body{
 .seccionTareas{
   width: 100%;
 }
+.menu-lateral {
+  width: 260px;
+  background-color: #ffffff;
+  border-right: 1px solid #b0b0b0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 20px;
+}
+
+.areaLogo {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #dcdcdc;
+}
+
+.navegacion-links {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-item {
+  padding: 15px 24px;
+  text-decoration: none;
+  color: #333333;
+  font-size: 16px;
+  border-bottom: 1px solid #e8e8e8;
+  background-color: #f1f3f5;
+  transition: background-color 0.2s;
+}
+.areaLogo img{
+  max-width: 175px;
+}
 
 .titulo{
+  margin-left:25px;
   font-size: 40px;
   font-weight:normal;
   color: #000000;
 }
 
 .cajaTarea{
+  margin-left:25px;
   background-color: white;
   border: 1px solid #b0b0b0; 
   padding: 14px 16px 14px 16px;
