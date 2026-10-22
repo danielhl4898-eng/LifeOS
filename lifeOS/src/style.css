@@ -277,3 +277,17 @@ body{
   font-size: 13px;
   margin-left: 2px;
 }
+
+.botonEliminar{
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  background-color: #ffe6e6;
+  color: #c92a2a;
+  border: 1px solid #ffa8a8;
+  font-size: 13px;
+  margin-left: 2px;
+  transition: background-color 0.2s;
+}
