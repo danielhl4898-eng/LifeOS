@@ -53,6 +53,9 @@ botonGuardarTarea.addEventListener("click", () => {
             <span>
               <button class="botonEditar">Editar</button>
             </span>
+            <span>
+              <button class="botonEliminar">Eliminar</button>
+            </span>
           </div>
         </div>
       </div>
@@ -107,12 +110,40 @@ botonGuardarTarea.addEventListener("click", () => {
       tareaEdit.querySelector(".fechaTareaDisplay").innerHTML = inputNuevaFecha.value
       modalEditarTarea.close()
     })
+
+
+    const btnEliminar = nuevaTarea.querySelector(".botonEliminar")
+    btnEliminar.addEventListener("click", () => {
+      tareaAEliminar = nuevaTarea
+      modalEliminarTarea.showModal()
+    })
+    
+
+
+
+
+
+
+
     nombreTareaNueva.value = ""
     descripcionTarea.value = ""
     fechaTareaNueva.value = ""
     prioridadTareaNueva.selectedIndex = 0
   }
 
+  
 })
 
+const modalEliminarTarea = document.getElementById("modalEliminarTarea")
+  const btnCancelarEliminado = document.getElementById("btnCancelarEliminado")
+  const btnConfirmarEliminado = document.getElementById("confirmarEliminado")
+  let tareaAEliminar = null
 
+  btnCancelarEliminado.addEventListener("click", ()=>{
+      modalEliminarTarea.close()
+    })
+    btnConfirmarEliminado.addEventListener("click", ()=>{
+      modalEliminarTarea.close()
+      tareaAEliminar.remove()
+      tareaAEliminar=null
+    })
