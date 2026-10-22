@@ -14,19 +14,66 @@ body{
 .seccionTareas{
   width: 100%;
 }
+.menu-lateral {
+  width: 260px;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 20px;
+  border-radius: 10px; 
+}
+
+.areaLogo{
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #dcdcdc;
+}
+
+.navegacion-links{
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.nav-item{
+  padding: 15px 24px;
+  text-decoration: none;
+  color: #333333;
+  font-size: 16px;
+  border-bottom: 1px solid #e8e8e8;
+  background-color: #f1f3f5;
+  transition: background-color 0.2s;
+}
+.areaLogo img{
+  max-width: 175px;
+}
 
 .titulo{
+  margin-left:25px;
   font-size: 40px;
   font-weight:normal;
   color: #000000;
 }
 
 .cajaTarea{
+  margin-left:15px;
   background-color: white;
-  border: 1px solid #b0b0b0; 
+  border: 1px solid #b0b0b0;
   padding: 14px 16px 14px 16px;
   position: relative;
-  border-radius: 0px; 
+  border-radius: 10px; 
+  margin-bottom: 10px;
+}
+
+.cajaTareaComp{
+  margin-left:15px;
+  background-color: rgb(222, 255, 222);
+  border: 1px solid #b0b0b0;
+  padding: 14px 16px 14px 16px;
+  position: relative;
+  border-radius: 10px; 
+  margin-bottom: 10px;
 }
 
 .titulo-cajacreartarea{
@@ -61,15 +108,30 @@ body{
   justify-content: center;
   border-radius: 5px;
   background-color: #F4F4F4;
+  width: 8%;
+  height: 30px;
 }
 
 .elegirPrioridad{
+  padding: 3px;
   border-radius: 5px;
   background-color: #F4F4F4;
   display: flex;
+  width: 8%;
+  height: 30px;
+  align-items: center;
+  justify-content: center;
 }
 
-.prioAlta {
+.fechaTarea{
+  padding: 3px;
+  border-radius: 5px;
+  background-color: #F4F4F4;
+  display: flex;
+  width: 8%;
+}
+
+.prioAlta{
   background-color: #ffe6e6;
   color: #c92a2a;
   border: 1px solid #ffa8a8;
@@ -78,7 +140,7 @@ body{
   padding: 3px 8px;
 }
 
-.prioMedia {
+.prioMedia{
   background-color: #fff9db;
   color: #b58105;
   border: 1px solid #ffe066;
@@ -95,7 +157,33 @@ body{
   font-size: 13px;
   padding: 3px 8px;
 }
-.estadoPendiente {
+.estadoPendiente{
+  background-color: lightsalmon;
+  color: brown;
+  border: 1px solid orangered;
+  border-radius: 5px;
+  padding: 3px 8px;
+  font-size: 13px;
+  font-weight: 500;
+}
+.descripcionGuardada{
+  color: #555555;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.filaInferior{
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  margin-top: 10px;
+}
+.grupoEtiquetas{
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.fechaTareaDisplay{
   background-color: #e9ecef;
   color: #495057;
   border: 1px solid #ced4da;
@@ -104,8 +192,88 @@ body{
   font-size: 13px;
   font-weight: 500;
 }
-.descripcionGuardada {
-  color: #555555;
-  font-size: 14px;
+
+.botonCompletar{
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  background-color: #F4F4F4;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.botonEditar{
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  background-color: #F4F4F4;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  font-size: 13px;
+  margin-left: 2px;
+}
+
+.tareaCompletada{
+  background-color:lightgreen;
+  color: #495057;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  padding: 3px 8px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.tareaPasada{
+  background-color: lightsalmon;
+  color: brown;
+  border: 1px solid orangered;
+  border-radius: 5px;
+  padding: 3px 8px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.botonesTarea{
+  display: flex;
+}
+
+
+.ventanaCambio[open]{
+  display:flex;
+  flex-direction: column;
+  position:fixed;
+  top:50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+  align-items: center;
+  padding: 15px;
+}
+
+.ventanaCambio input{
+  width: 99%;
+  height: 30px;
+  padding: 4px 8px;
+  font-size: 15px;
+  color: #333333;
+  border: 1px solid;
+  background-color: #f9f9f9;
   margin-bottom: 10px;
+  border-radius: 5px;
+}
+.ventanaCambio button{
+  margin-bottom:5px;
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  background-color: #F4F4F4;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  margin-left: 2px;
 }
