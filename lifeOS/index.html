@@ -25,20 +25,30 @@
       <h1 class="titulo">Tareas</h1>
       <div class="cajaTarea">
         <div class="titulo-cajacreartarea">Nueva tarea</div>
-          <input type="text" class="nombreTareaNueva" placeholder="Nombre de la tarea" id="nombreTarea">
+          <input type="text" class="nombreTareaNueva" placeholder="Nombre de la tarea*" id="nombreTarea">
           <input type="text" class="nombreTareaNueva" placeholder="Descripcion de la tarea" id="descripcionTarea">
           <div class="filaInferior">
               <select class="elegirPrioridad" id="prioridadNueva">
-                <option value="" disabled selected>Prioridad</option>
+                <option value="" disabled selected>Prioridad*</option>
                 <option value="Alta">Alta</option>
                 <option value="Media">Media</option>
                 <option value="Baja">Baja</option>
               </select>
+              <input type="date" id="fechaTareaNueva" class="fechaTarea">
               <button class="boton-guardar" id="btnGuardar">Guardar tarea</button>
         </div>
       </div>
       <div id="listaTareas"></div>
     </div>
+    <dialog id="cambiarDesc" class="ventanaCambio">
+      <h1 class="titulo-cajacreartarea">Editar tarea</h1>
+      <input type="text" id="nuevoNombre" placeholder="Introduce un nombre nuevo*">
+      <input type="text" id="nuevaDesc" placeholder="Introduce una nueva descripcion">
+      <input type="date" id="nuevaFechaCambia">
+      <button id="btnGuardarEdit">Guardar</button>
+      <button id="btnCancelar">Cancelar</button>
+    </dialog>
+
   </body>
   <script type="module" src="/src/main.js"></script>
 </html>
