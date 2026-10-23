@@ -241,8 +241,6 @@ body{
 .botonesTarea{
   display: flex;
 }
-
-
 .ventanaCambio[open]{
   display:flex;
   flex-direction: column;
@@ -252,6 +250,10 @@ body{
   transform: translate(-50%, -50%);
   align-items: center;
   padding: 15px;
+}
+
+.ventanaCambio::backdrop {
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
 .ventanaCambio input{
@@ -290,4 +292,5 @@ body{
   font-size: 13px;
   margin-left: 2px;
   transition: background-color 0.2s;
+  cursor:pointer;
 }

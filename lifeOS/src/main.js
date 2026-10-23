@@ -5,6 +5,11 @@ const fechaTareaNueva = document.getElementById("fechaTareaNueva")
 const tareas = document.getElementById("listaTareas")
 const descripcionTarea = document.getElementById("descripcionTarea")
 const modalEditarTarea = document.getElementById("cambiarDesc")
+const modalEliminarTarea = document.getElementById("modalEliminarTarea")
+const btnCancelarEliminado = document.getElementById("btnCancelarEliminado")
+const btnConfirmarEliminado = document.getElementById("confirmarEliminado")
+let tareaAEliminar = null
+
 
 const fechaHoy = new Date()
 fechaHoy.setDate(0,0,0,0)
@@ -89,9 +94,10 @@ botonGuardarTarea.addEventListener("click", () => {
     const inputNuevaFecha = document.getElementById("nuevaFechaCambia")
     const botonGuardarEdit = document.getElementById("btnGuardarEdit")
     const botonCancelarEdit = document.getElementById("btnCancelar")
-    let tareaEdit = nuevaTarea
+    let tareaEdit = null
     btnEditar.addEventListener("click", ()=>{
-      modalEditarTarea.show()
+      modalEditarTarea.showModal()
+      tareaEdit = nuevaTarea
     })
 
     botonCancelarEdit.addEventListener("click", ()=>{
@@ -105,12 +111,15 @@ botonGuardarTarea.addEventListener("click", () => {
         alert("Por favor, introduce un nombre para la tarea")
         return
       }
+      if(inputNuevaDesc.value !== ""){
+        tareaEdit.querySelector(".descripcionGuardada").innerHTML =inputNuevaDesc.value
+      }
+      if(inputNuevaFecha.value !== ""){
+        tareaEdit.querySelector(".fechaTareaDisplay").innerHTML = inputNuevaFecha.value
+      }
       tareaEdit.querySelector("h3").innerText = inputNuevoNombre.value
-      tareaEdit.querySelector(".descripcionGuardada").innerHTML =inputNuevaDesc.value
-      tareaEdit.querySelector(".fechaTareaDisplay").innerHTML = inputNuevaFecha.value
       modalEditarTarea.close()
     })
-
 
     const btnEliminar = nuevaTarea.querySelector(".botonEliminar")
     btnEliminar.addEventListener("click", () => {
@@ -118,12 +127,6 @@ botonGuardarTarea.addEventListener("click", () => {
       modalEliminarTarea.showModal()
     })
     
-
-
-
-
-
-
 
     nombreTareaNueva.value = ""
     descripcionTarea.value = ""
@@ -134,16 +137,13 @@ botonGuardarTarea.addEventListener("click", () => {
   
 })
 
-const modalEliminarTarea = document.getElementById("modalEliminarTarea")
-  const btnCancelarEliminado = document.getElementById("btnCancelarEliminado")
-  const btnConfirmarEliminado = document.getElementById("confirmarEliminado")
-  let tareaAEliminar = null
 
-  btnCancelarEliminado.addEventListener("click", ()=>{
-      modalEliminarTarea.close()
-    })
-    btnConfirmarEliminado.addEventListener("click", ()=>{
-      modalEliminarTarea.close()
-      tareaAEliminar.remove()
-      tareaAEliminar=null
-    })
+
+btnCancelarEliminado.addEventListener("click", ()=>{
+    modalEliminarTarea.close()
+  })
+btnConfirmarEliminado.addEventListener("click", ()=>{
+  modalEliminarTarea.close()
+  tareaAEliminar.remove()
+  tareaAEliminar=null
+})
